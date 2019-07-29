@@ -41,6 +41,7 @@
                 width: 100%;
                 list-style: none;
                 text-align: center;
+                z-index: 2;
             }
 
             .shown {
@@ -57,11 +58,11 @@
             }
 
             .shown .buttons {
-                /* padding: 5px 0;
+                padding: 5px 0;
                 background: #eee;
                 text-align: center;
                 z-index: 10;
-                position: relative; */
+                position: relative;
             }
 
             .carousel button {
@@ -78,54 +79,72 @@
                 left: -2000px;
             }
 
-            /* .pic-scroller {
-                margin: auto;
-                height: 500px;
-                width: 80%;
-                transition: background-image .3s ease-in-out;
-            }
-
-            .picture-scroll {
-                color: greenyellow;
-                cursor: pointer;
-                font-size: 2rem;
-                position: fixed;
-                top: 50%;
-            }
-
-            .picture-scroll:hover {
-                color: green;
-            }
-
-            .picture-scroll.right {
-                right: 1rem;
-            }
-
-            .picture-scroll.left {
-                left: 1rem;
-            } */
-
         </style>
     </head>
 
     <body>
         <title class="main-title">Vanillachatousel</title>
-        <div class="buttons">
-                <button class="previous">
-                  ◀ <span class="invisible">Previous</span>
-                </button>
-                <button class="next">
-                  <span class="invisible">Next</span> ▶ 
-                </button>
-              </div>
 
         <div class="container shown">
-                <ol class="carousel">
-                  <li class="current">1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                </ol>
-              </div>
+            <div class="buttons">
+                <button class="previous">
+                    ◀ <span class="invisible">Previous</span>
+                </button>
+                <button class="next">
+                    <span class="invisible">Next</span> ▶ 
+                </button>
+            </div>
+
+            <ol class="carousel">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ol>
+        </div>
+
+        <script>
+            carousel = (function(){
+                let frame = document.querySelector('.container');
+                let next = frame.querySelector('.next');
+                let previous = frame.querySelector('.previous');
+
+                let counter = 0;
+                let images = frame.querySelectorAll('.carousel li');
+                let imageIndex = images.length;
+                let current = images[0];
+                
+                frame.classList.add('shown');
+                
+                function move(direction) {
+                    current.classList.remove('current');
+                    counter = counter + direction;
+
+                    if(direction === -1 && counter < 0){
+                        counter = imageIndex - 1;
+                    }
+
+                    if(direction === 1 && !images[counter]){
+                        counter = 0;
+                    }
+
+                    current = images[counter];
+                    current.classList.add('current');
+                    
+                }
+
+                next.addEventListener('click', function(ev) {
+                    move(1);
+                });
+                
+                previous.addEventListener('click', function(ev) {
+                    move(-1);
+                });
+
+                move(0);
+
+            })();
+        </script>
     </body>
+
 </html>
