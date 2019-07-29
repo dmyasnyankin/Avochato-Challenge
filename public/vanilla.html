@@ -19,10 +19,17 @@
                 text-shadow: 2px 1px burlywood;
             }
 
+            .car-wrp{
+                height: 800px;
+                width: 80%;
+            }
+
             .container{
                 position: relative;
                 overflow: hidden;
-                /* background: black; */
+                height: 100%;
+                /* width: 100%; */
+                /* background: black;
             }
             .carousel{
                 margin: 0;
@@ -35,34 +42,61 @@
             }
 
             .carousel li{
+                margin-top: 50px;
+                display: flex;
+                flex-direction: row;
+                padding: 8px;
+                box-shadow: 5px 5px 3px burlywood;
                 font-size: 100px;
                 margin: 0;
                 padding: 0;
-                width: 100%;
                 list-style: none;
                 text-align: center;
                 z-index: 2;
+                position: relative;
+            }
+
+            img{
+                height: 500px;
+                width: 80%;
             }
 
             .shown {
-                height: 130px;
+                height: 500px;
             }
 
             .shown li {
                 position: absolute;
-                top: 200px;
+                top: 500px;
+                /* height: 100%;
+                width: 100%; */
             }
 
             .shown li.current {
                 top: 30px;
+                size: cover;
+                width: 80%;
             }
 
             .shown .buttons {
+                display: flex;
+                flex-direction: row;
                 padding: 5px 0;
                 background: #eee;
                 text-align: center;
                 z-index: 10;
-                position: relative;
+                /* position: relative; */
+                margin: auto;
+            }
+
+            .previous{
+                left: 1rem;
+                width: 10%;
+            }
+
+            .next{
+                right: 1rem;
+                width: 10%;
             }
 
             .carousel button {
@@ -90,13 +124,15 @@
                 <button class="previous">
                     ◀ <span class="invisible">Previous</span>
                 </button>
-                <ol class="carousel">
-                    <li><img src="https://images-na.ssl-images-amazon.com/images/I/81LKLCmdAQL._SL1500_.jpg" alt=""></li>
-                    <li><img src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/p7_Avocado_HH1806_gi901359518.jpg" alt=""></li>
-                    <li><img src="https://img.huffingtonpost.com/asset/5b880250200000430034b929.jpeg?ops=scalefit_720_noupscale" alt=""></li>
-                    <li><img src="https://media.self.com/photos/5b43712e4d0c3c282a8878d1/4:3/w_728,c_limit/avocado.jpg" alt=""></li>
-                    <li><img src="https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2017/01/avocado.jpg" alt=""></li>
-                </ol>
+                <div class="car-wrp">
+                    <ol class="carousel">
+                        <li><img src="https://images-na.ssl-images-amazon.com/images/I/81LKLCmdAQL._SL1500_.jpg" alt=""></li>
+                        <li><img src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/p7_Avocado_HH1806_gi901359518.jpg" alt=""></li>
+                        <li><img src="https://img.huffingtonpost.com/asset/5b880250200000430034b929.jpeg?ops=scalefit_720_noupscale" alt=""></li>
+                        <li><img src="https://media.self.com/photos/5b43712e4d0c3c282a8878d1/4:3/w_728,c_limit/avocado.jpg" alt=""></li>
+                        <li><img src="https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2017/01/avocado.jpg" alt=""></li>
+                    </ol>
+                </div>
                 <button class="next">
                     <span class="invisible">Next</span> ▶ 
                 </button>
