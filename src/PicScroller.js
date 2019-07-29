@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 const PicScroller = ({ picture }) => {
 
     const styling = {
-        backgroundImage: `url(${url})`,
+        backgroundImage: `url(${picture})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
     };

@@ -1,0 +1,5 @@
+.pic-scroller {
+	height: 500px;
+	width: 800px;
+	transition: background-image .3s ease-in-out;
+}
