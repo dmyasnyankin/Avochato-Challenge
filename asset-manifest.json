@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Avochato-Challenge/static/css/main.05ccffc3.chunk.css",
+    "main.js": "/Avochato-Challenge/static/js/main.30b54d8d.chunk.js",
+    "main.js.map": "/Avochato-Challenge/static/js/main.30b54d8d.chunk.js.map",
+    "runtime~main.js": "/Avochato-Challenge/static/js/runtime~main.d5c6f737.js",
+    "runtime~main.js.map": "/Avochato-Challenge/static/js/runtime~main.d5c6f737.js.map",
+    "static/js/2.1b5bec0c.chunk.js": "/Avochato-Challenge/static/js/2.1b5bec0c.chunk.js",
+    "static/js/2.1b5bec0c.chunk.js.map": "/Avochato-Challenge/static/js/2.1b5bec0c.chunk.js.map",
+    "index.html": "/Avochato-Challenge/index.html",
+    "precache-manifest.2a473946bfe92fcc964cf4112cdb3b34.js": "/Avochato-Challenge/precache-manifest.2a473946bfe92fcc964cf4112cdb3b34.js",
+    "service-worker.js": "/Avochato-Challenge/service-worker.js",
+    "static/css/main.05ccffc3.chunk.css.map": "/Avochato-Challenge/static/css/main.05ccffc3.chunk.css.map"
+  }
+}

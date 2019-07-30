@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vanillachatousel</title>
+        <style>
+            body{
+                background-color: khaki;
+            }
+
+            .main-title{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                color: green;
+                box-shadow: brown;
+                font-size: 50px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                text-shadow: 2px 1px burlywood;
+                margin-bottom: 50px;
+            }
+
+            .car-wrp{
+                height: 800px;
+                width: 80%;
+            }
+
+            .container{
+                position: relative;
+                overflow: hidden;
+                height: 100%;
+                background: black;
+            }
+
+            .carousel li{
+                margin-top: 50px;
+                display: flex;
+                flex-direction: row;
+                padding: 8px;
+                margin: auto;
+                padding: auto;
+                list-style: none;
+                text-align: center;
+                z-index: 2;
+                position: relative;
+                
+            }
+
+            img{
+                height: 500px;
+                width: 80%;
+            }
+
+            .shown {
+                height: 500px;
+            }
+
+            .shown li {
+                position: absolute;
+                top: 500px;
+                transition: .2s ease-in-out;
+                transform: scale(0);
+            }
+
+            .shown li.current {
+                top: 30px;
+                size: cover;
+                width: 90%;
+                transition: .5s;
+                transform: scale(1);
+
+            }
+
+            .shown .buttons {
+                display: flex;
+                flex-direction: row;
+                padding: 5px 0;
+                text-align: center;
+                z-index: 10;
+                margin: auto;
+
+            }
+
+            .previous{
+                left: 1rem;
+                width: 10%;
+                z-index: 100;
+                background: transparent;
+                color: greenyellow;
+                outline: none;
+                border: black;
+                font-size: 50px;
+                padding-bottom: 250px;
+            }
+            
+            .next{
+                right: 1rem;
+                width: 10%;
+                z-index: 100;
+                background: transparent;
+                color: greenyellow;
+                outline: none;
+                border: black;
+                font-size: 50px;
+                padding-bottom: 250px;
+            }
+
+            .previous:hover{
+                color: green;
+            }
+
+            .next:hover{
+                color: green;
+            }
+
+            .carousel button {
+                border: none;
+                display: none;
+            }
+
+            .shown button {
+                display: block;
+            }
+
+            .invisible {
+                position: absolute;
+                left: -2000px;
+            }
+
+            .filler{
+                height: 30px;
+                width: 100%;
+                background: black;
+            }
+
+            a {
+                padding: 10px;
+                font-size: 20px;
+                font-family: cursive;
+                text-decoration: none;
+            }
+
+        </style>
+        <link rel="shortcut icon" href="./avochato_logo.ico" type="image/x-icon" />
+
+    </head>
+
+    <body>
+        <title class="main-title">Vanilla-chat-ousel</title>
+
+        <div class="container shown">
+            <div class="buttons">
+                <button class="previous">
+                    ◀ <span class="invisible">Previous</span>
+                </button>
+                <div class="car-wrp">
+                    <ol class="carousel">
+                        <li><img src="https://images-na.ssl-images-amazon.com/images/I/81LKLCmdAQL._SL1500_.jpg" alt=""></li>
+                        <li><img src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/p7_Avocado_HH1806_gi901359518.jpg" alt=""></li>
+                        <li><img src="https://img.huffingtonpost.com/asset/5b880250200000430034b929.jpeg?ops=scalefit_720_noupscale" alt=""></li>
+                        <li><img src="https://media.self.com/photos/5b43712e4d0c3c282a8878d1/4:3/w_728,c_limit/avocado.jpg" alt=""></li>
+                        <li><img src="https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2017/01/avocado.jpg" alt=""></li>
+                    </ol>
+                </div>
+                <button class="next">
+                    <span class="invisible">Next</span> ▶ 
+                </button>
+            </div>
+            
+        </div>
+        <div class="filler"></div>
+
+        <script>
+            carousel = (function(){
+                let frame = document.querySelector('.container');
+                let next = frame.querySelector('.next');
+                let previous = frame.querySelector('.previous');
+
+                let counter = 0;
+                let images = frame.querySelectorAll('.carousel li');
+                let imageIndex = images.length;
+                let current = images[0];
+                
+                frame.classList.add('shown');
+                
+                function move(direction) {
+                    current.classList.remove('current');
+                    counter = counter + direction;
+
+                    if(direction === -1 && counter < 0){
+                        counter = imageIndex - 1;
+                    }
+
+                    if(direction === 1 && !images[counter]){
+                        counter = 0;
+                    }
+
+                    current = images[counter];
+                    current.classList.add('current');
+                    
+                }
+
+                next.addEventListener('click', function(ev) {
+                    move(1);
+                });
+                
+                previous.addEventListener('click', function(ev) {
+                    move(-1);
+                });
+
+                move(0);
+
+            })();
+        </script>
+    </br>
+    <a href="index.html">Go to the Avo-chat-ousel</a>
+
+    </body>
+
+</html>
