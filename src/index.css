@@ -21,7 +21,7 @@ body{
     margin-top: 50px;
     display: flex;
     flex-direction: row;
-    padding: 8px;
+    padding: 30px;
     box-shadow: 5px 5px 3px burlywood;
 }
 
@@ -50,4 +50,11 @@ body{
 
 .picture-scroll.left {
 	left: 1rem;
+}
+
+a {
+    padding: 10px;
+    font-size: 20px;
+    font-family: cursive;
+    text-decoration: none;
 }

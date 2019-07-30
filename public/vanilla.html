@@ -17,6 +17,7 @@
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 font-weight: bold;
                 text-shadow: 2px 1px burlywood;
+                margin-bottom: 50px;
             }
 
             .car-wrp{
@@ -36,13 +37,13 @@
                 display: flex;
                 flex-direction: row;
                 padding: 8px;
-
                 margin: auto;
                 padding: auto;
                 list-style: none;
                 text-align: center;
                 z-index: 2;
                 position: relative;
+                
             }
 
             img{
@@ -84,7 +85,7 @@
                 outline: none;
                 border: black;
                 font-size: 50px;
-                padding-bottom: 40%;
+                padding-bottom: 250px;
             }
             
             .next{
@@ -96,7 +97,15 @@
                 outline: none;
                 border: black;
                 font-size: 50px;
-                padding-bottom: 40%;
+                padding-bottom: 250px;
+            }
+
+            .previous:hover{
+                color: green;
+            }
+
+            .next:hover{
+                color: green;
             }
 
             .carousel button {
@@ -113,11 +122,26 @@
                 left: -2000px;
             }
 
+            .filler{
+                height: 30px;
+                width: 100%;
+                background: black;
+            }
+
+            a {
+                padding: 10px;
+                font-size: 20px;
+                font-family: cursive;
+                text-decoration: none;
+            }
+
         </style>
+        <link rel="shortcut icon" href="./avochato_logo.ico" type="image/x-icon" />
+
     </head>
 
     <body>
-        <title class="main-title">Vanillachatousel</title>
+        <title class="main-title">Vanilla-chat-ousel</title>
 
         <div class="container shown">
             <div class="buttons">
@@ -137,8 +161,9 @@
                     <span class="invisible">Next</span> ▶ 
                 </button>
             </div>
-
+            
         </div>
+        <div class="filler"></div>
 
         <script>
             carousel = (function(){
@@ -182,8 +207,8 @@
 
             })();
         </script>
-
-    <a href="index.html">Check this out</a>
+    </br>
+    <a href="index.html">Go to the Avo-chat-ousel</a>
 
     </body>
 
