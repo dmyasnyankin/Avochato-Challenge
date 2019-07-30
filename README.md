@@ -34,6 +34,8 @@ It would set a counter to keep track of the index of the list item, along with a
 Inside of the carousel logic there was a move function that would move the counter up or down by 1 depending on which button
 was clicked. I had a conditional checking whether the direction was equal (which would show the next image) to one and the amount of images went over the amount of images in the list, in which case the counter would reset at 0, and a conditional checking whether the direction was equal to -1 (which would show the previous image) and if the amount of images on the list was less than 0 which would reset the counter at the last image in the list.
 
+Inside of the move function the list item would remove the "current" class and add it to the new space the user wanted to go to. This class was responsible for showing the image in question.
+
 Event listeners were added to the next and previous buttons to then use the move function.
 
 I used the Avochato logo as the icon in the site. Creds to avochato.com
