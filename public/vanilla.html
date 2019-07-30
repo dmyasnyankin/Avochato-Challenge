@@ -58,12 +58,17 @@
             .shown li {
                 position: absolute;
                 top: 500px;
+                transition: .2s ease-in-out;
+                transform: scale(0);
             }
 
             .shown li.current {
                 top: 30px;
                 size: cover;
                 width: 90%;
+                transition: .5s;
+                transform: scale(1);
+
             }
 
             .shown .buttons {
